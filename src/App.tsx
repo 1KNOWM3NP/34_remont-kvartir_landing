@@ -4,7 +4,9 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import { LeadModalProvider } from './components/LeadModal';
 import Pain from './components/Pain';
+import Portfolio from './components/Portfolio';
 import SocialProof from './components/SocialProof';
+import Video from './components/Video';
 import Zamer from './components/Zamer';
 
 export default function App() {
@@ -24,6 +26,8 @@ export default function App() {
           <Pain />
           <Benefits />
           <Calculator />
+          <Portfolio />
+          <Video />
           <Zamer />
         </main>
       </div>
