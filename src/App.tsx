@@ -1,11 +1,13 @@
 import Benefits from './components/Benefits';
 import Calculator from './components/Calculator';
+import Faq from './components/Faq';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import { LeadModalProvider } from './components/LeadModal';
 import Pain from './components/Pain';
 import Portfolio from './components/Portfolio';
 import SocialProof from './components/SocialProof';
+import Steps from './components/Steps';
 import Video from './components/Video';
 import Zamer from './components/Zamer';
 
@@ -28,6 +30,8 @@ export default function App() {
           <Calculator />
           <Portfolio />
           <Video />
+          <Steps />
+          <Faq />
           <Zamer />
         </main>
       </div>
