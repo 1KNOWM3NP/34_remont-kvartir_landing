@@ -1,56 +1,45 @@
-export interface CalcSummary {
-  area: number;
-  repairType: string;
-  rooms: string;
-  options: string[];
-  priceMin: number;
-  priceMax: number;
-}
-
-export interface LeadInput {
+export interface LeadPayload {
   name: string;
-  /** Нормализованный телефон: 11 цифр, начинается с 7 */
   phone: string;
-  /** Откуда открыта модалка: hero / header / calculator / zamer */
   source: string;
-  calc?: CalcSummary;
-}
-
-export interface Lead extends LeadInput {
-  id: string;
+  details?: string;
   createdAt: string;
 }
 
-const STORAGE_KEY = 'remont-kvartir-leads';
+export interface LeadResult {
+  ok: boolean;
+  id: string;
+}
 
-/** Заглушка бэкенда: пишем в localStorage + имитация сети 400мс.
- *  Позже заменить тело на fetch к SQLite-бэкенду — сигнатура не меняется. */
-export async function submitLead(input: LeadInput): Promise<Lead> {
-  await new Promise((r) => setTimeout(r, 400));
-  const lead: Lead = {
-    ...input,
-    id:
-      typeof crypto !== 'undefined' && 'randomUUID' in crypto
-        ? crypto.randomUUID()
-        : `lead-${Date.now()}`,
+const STORAGE_KEY = 'kvart-remont:leads';
+
+/**
+ * Слой-абстракция отправки заявок (AGENTS.md).
+ * Сейчас: localStorage + имитация сети. Позже здесь будет fetch к
+ * SQLite-бэкенду — формы и модалка не изменятся.
+ */
+export async function submitLead(
+  payload: Omit<LeadPayload, 'createdAt'>,
+): Promise<LeadResult> {
+  const lead: LeadPayload = {
+    ...payload,
     createdAt: new Date().toISOString(),
   };
+
+  // Имитация сетевой задержки, чтобы были видны состояния загрузки.
+  await new Promise((r) => setTimeout(r, 500));
+
+  const id = `lead-${Date.now().toString(36)}`;
+
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    const list: Lead[] = raw ? (JSON.parse(raw) as Lead[]) : [];
+    const list: LeadPayload[] = raw ? JSON.parse(raw) : [];
     list.push(lead);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
   } catch {
-    // localStorage может быть недоступен — заявка всё равно считается принятой
+    // Приватный режим и т.п. — заявка всё равно считается принятой,
+    // позже уйдёт на бэкенд. Не роняем UI.
   }
-  return lead;
-}
 
-export function listLeads(): Lead[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as Lead[]) : [];
-  } catch {
-    return [];
-  }
+  return { ok: true, id };
 }
