@@ -1,122 +1,58 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import Header from './components/Header';
+import Hero from './components/Hero';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <div className="min-h-screen bg-background font-body text-foreground antialiased">
+      <a
+        href="#hero-heading"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-lg focus:bg-card focus:px-4 focus:py-2 focus:font-bold"
+      >
+        Перейти к содержанию
+      </a>
+      <Header />
+      <main>
+        <Hero />
+
+        {/* Заглушки якорей под задачи №2 (калькулятор) и №3 (модалка/замер).
+            CTA hero уже ведут сюда; наполнение — в своих задачах. */}
+        <section
+          id="calculator"
+          aria-label="Калькулятор стоимости (скоро)"
+          className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-6 sm:px-6"
         >
-          Count is {count}
-        </button>
-      </section>
+          <div className="rounded-2xl border border-dashed border-primary/50 bg-card px-6 py-8 text-center">
+            <h2 className="font-display text-xl font-extrabold">
+              Калькулятор стоимости
+            </h2>
+            <p className="mx-auto mt-2 max-w-md text-muted-foreground">
+              Появится в задаче №2: площадь, тип ремонта, комнаты и опции →
+              диапазон цены.
+            </p>
+          </div>
+        </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
+        <section
+          id="zamer"
+          aria-label="Бесплатный замер (скоро)"
+          className="mx-auto max-w-6xl scroll-mt-20 px-4 pt-2 pb-16 sm:px-6"
+        >
+          <div className="rounded-2xl bg-foreground px-6 py-10 text-center text-white">
+            <h2 className="font-display text-xl font-extrabold sm:text-2xl">
+              Бесплатный замер за 60 минут
+            </h2>
+            <p className="mx-auto mt-2 max-w-md text-white/80">
+              Форма заявки с модалкой появится в задаче №3. А пока звоните:{' '}
+              <a
+                href="tel:+74951204567"
+                className="font-bold whitespace-nowrap text-white underline decoration-accent decoration-2 underline-offset-4"
+              >
+                +7 495 120-45-67
               </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 }
-
-export default App

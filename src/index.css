@@ -1,5 +1,39 @@
 @import "tailwindcss";
 
+/*
+ * Дизайн-система «Ремонт квартир» (ui-ux-pro-max --design-system, MASTER.md).
+ * Палитра: тёплый stone + amber CTA на тёплом фоне #FAF5F2.
+ * Отклонения от сгенерированного MASTER (зафиксированы сознательно):
+ * 1. Шрифты: Figtree/Noto Sans заменены на Manrope/Inter — у Figtree нет
+ *    кириллицы, сайт полностью на русском. Характер (геометричный гротеск)
+ *    сохранён.
+ * 2. Primary CTA: тёмный текст (#1C1917) на amber #D97706 вместо белого —
+ *    белый на #D97706 даёт ~3.5:1, требование AGENTS — 4.5:1 минимум.
+ */
+
+@theme {
+  --color-primary: #78716c;
+  --color-on-primary: #ffffff;
+  --color-secondary: #a8a29e;
+  --color-on-secondary: #000000;
+  --color-accent: #d97706;
+  --color-accent-dark: #b45309;
+  --color-on-accent: #1c1917;
+  --color-background: #faf5f2;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-muted: #f6f6f6;
+  --color-muted-foreground: #475569;
+  --color-border: #eeeded;
+  --color-destructive: #dc2626;
+  --color-on-destructive: #ffffff;
+  --color-ring: #78716c;
+
+  --font-display: "Manrope", "Inter", system-ui, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
 :root {
   color-scheme: light;
 }
@@ -10,7 +44,49 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* Видимый фокус для клавиатурной навигации (чеклист MASTER) */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Уважение к prefers-reduced-motion (чеклист MASTER) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
