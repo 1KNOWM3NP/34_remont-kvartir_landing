@@ -1,4 +1,5 @@
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 const faqs = [
   {
@@ -37,7 +38,7 @@ export default function Faq() {
     <section aria-labelledby="faq-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+          <Reveal className="lg:sticky lg:top-24 lg:self-start">
             <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
               Вопросы и ответы
             </p>
@@ -57,8 +58,9 @@ export default function Faq() {
             >
               Задать свой вопрос
             </button>
-          </div>
+          </Reveal>
 
+          <Reveal delay={0.1}>
           <div className="space-y-3">
             {faqs.map((f) => (
               <details
@@ -85,6 +87,7 @@ export default function Faq() {
               </details>
             ))}
           </div>
+          </Reveal>
         </div>
       </div>
     </section>

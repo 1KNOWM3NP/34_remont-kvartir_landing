@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 type RepairType = 'cosmetic' | 'capital' | 'euro';
 
@@ -69,6 +70,7 @@ export default function Calculator() {
   return (
     <section id="calculator" aria-labelledby="calc-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 py-14 sm:px-6 lg:py-20">
+        <Reveal>
         <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
           Калькулятор
         </p>
@@ -82,6 +84,7 @@ export default function Calculator() {
           Подвигайте слайдер и выберите параметры — цену увидите сразу. Это
           ориентир по тарифам, точную смету посчитаем после бесплатного замера.
         </p>
+        </Reveal>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           {/* Параметры */}

@@ -42,6 +42,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis ведёт скролл сам — глушим CSS-плавность, чтобы не двоило */
+html.lenis {
+  scroll-behavior: auto;
+}
+
 body {
   margin: 0;
   background-color: var(--color-background);

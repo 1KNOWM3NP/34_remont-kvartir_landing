@@ -1,3 +1,5 @@
+import Reveal from './Reveal';
+
 const pains = [
   {
     title: 'Смета выросла в полтора раза',
@@ -42,7 +44,7 @@ export default function Pain() {
   return (
     <section aria-labelledby="pain-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
-        <div className="rounded-3xl border border-border bg-card p-6 sm:p-10">
+        <Reveal className="rounded-3xl border border-border bg-card p-6 sm:p-10">
           <p className="font-display text-sm font-bold tracking-wide text-destructive uppercase">
             Знакомо?
           </p>
@@ -75,7 +77,7 @@ export default function Pain() {
               Смотрите, как именно
             </a>
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

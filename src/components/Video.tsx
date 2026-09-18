@@ -1,4 +1,5 @@
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 /**
  * Ссылка на embed-видео о компании. Пока пусто — показываем
@@ -30,7 +31,7 @@ export default function Video() {
   return (
     <section aria-labelledby="video-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
-        <div className="grid items-center gap-8 rounded-3xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-10 lg:grid-cols-2">
+        <Reveal className="grid items-center gap-8 rounded-3xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-10 lg:grid-cols-2">
           <div>
             <p className="font-display text-sm font-bold tracking-wide text-accent uppercase">
               Видео о компании
@@ -106,7 +107,7 @@ export default function Video() {
               </button>
             )}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

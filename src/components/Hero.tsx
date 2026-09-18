@@ -1,4 +1,5 @@
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 const stats = [
   {
@@ -64,9 +65,13 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] items-center gap-10 px-4 pt-10 pb-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:pt-16 lg:pb-20">
         {/* Левая колонка: оффер */}
         <div>
+          <Reveal>
           <p className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-4 py-1 font-display text-sm font-bold text-muted-foreground">
             12 лет делаем ремонт под ключ · гарантия 3 года
           </p>
+          </Reveal>
+
+          <Reveal delay={0.08}>
 
           <h1
             id="hero-heading"
@@ -91,12 +96,18 @@ export default function Hero() {
               </svg>
             </span>
           </h1>
+          </Reveal>
+
+          <Reveal delay={0.16}>
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Фиксированная смета до старта работ, фотоотчёт каждую неделю
             и&nbsp;уборка после сдачи. Косметический — от&nbsp;6&nbsp;000&nbsp;₽/м²,
             капитальный — от&nbsp;12&nbsp;000&nbsp;₽/м².
           </p>
+          </Reveal>
+
+          <Reveal delay={0.24}>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
@@ -113,12 +124,17 @@ export default function Hero() {
               Бесплатный замер
             </button>
           </div>
+          </Reveal>
+
+          <Reveal delay={0.3}>
 
           <p className="mt-4 text-sm text-muted-foreground">
             Замер — 60 минут, смета — за 24 часа. Без предоплаты за работы.
           </p>
+          </Reveal>
 
-          <dl className="mt-8 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
+          <Reveal delay={0.36} className="mt-8">
+          <dl className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
             {stats.map((s) => (
               <div
                 key={s.label}
@@ -137,9 +153,11 @@ export default function Hero() {
               </div>
             ))}
           </dl>
+          </Reveal>
         </div>
 
         {/* Правая колонка: визуальная карточка */}
+        <Reveal delay={0.2}>
         <div className="relative" aria-label="Пример сданного ремонта">
           <div
             aria-hidden="true"
@@ -209,6 +227,7 @@ export default function Hero() {
             −10% при заказе до конца месяца
           </p>
         </div>
+        </Reveal>
       </div>
     </section>
   );

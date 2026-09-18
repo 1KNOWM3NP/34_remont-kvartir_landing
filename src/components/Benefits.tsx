@@ -1,4 +1,5 @@
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 const items = [
   {
@@ -87,6 +88,7 @@ export default function Benefits() {
   return (
     <section id="benefits" aria-labelledby="benefits-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 py-14 sm:px-6 lg:py-20">
+        <Reveal>
         <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
           Почему мы
         </p>
@@ -99,8 +101,10 @@ export default function Benefits() {
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           Каждый пункт ниже — строчка в договоре, а не рекламный слоган.
         </p>
+        </Reveal>
 
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal delay={0.1} className="mt-8">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((b) => (
             <li
               key={b.title}
@@ -119,6 +123,7 @@ export default function Benefits() {
             </li>
           ))}
         </ul>
+        </Reveal>
 
         <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <button

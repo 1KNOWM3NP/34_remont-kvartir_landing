@@ -1,4 +1,5 @@
 import LeadForm from './LeadForm';
+import Reveal from './Reveal';
 
 const points = [
   'Приедем в удобное время — замер занимает 60 минут',
@@ -14,7 +15,7 @@ export default function Zamer() {
   return (
     <section id="zamer" aria-labelledby="zamer-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-16 sm:px-6">
-        <div className="grid gap-6 overflow-hidden rounded-3xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-10 lg:grid-cols-2 lg:gap-10">
+        <Reveal className="grid gap-6 overflow-hidden rounded-3xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-10 lg:grid-cols-2 lg:gap-10">
           <div>
             <p className="font-display text-sm font-bold tracking-wide text-accent uppercase">
               Бесплатный замер
@@ -60,7 +61,7 @@ export default function Zamer() {
           <div className="rounded-2xl bg-background p-6 text-foreground sm:p-8">
             <LeadForm source="zamer" idPrefix="zamer" />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

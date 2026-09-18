@@ -1,4 +1,5 @@
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 const steps = [
   {
@@ -32,6 +33,7 @@ export default function Steps() {
   return (
     <section aria-labelledby="steps-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 py-14 sm:px-6 lg:py-20">
+        <Reveal>
         <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
           Как работаем
         </p>
@@ -41,8 +43,10 @@ export default function Steps() {
         >
           От заявки до ключей — 4 шага
         </h2>
+        </Reveal>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal delay={0.1} className="mt-8">
+        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
             <li
               key={s.n}
@@ -59,6 +63,7 @@ export default function Steps() {
             </li>
           ))}
         </ol>
+        </Reveal>
 
         <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <button

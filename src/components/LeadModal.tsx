@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import LeadForm from './LeadForm';
 
 interface OpenArgs {
@@ -58,19 +59,21 @@ export function LeadModalProvider({ children }: { children: ReactNode }) {
   return (
     <LeadModalContext.Provider value={open}>
       {children}
-      {req && (
-        <ModalShell
-          title={req.title ?? TITLES[req.source] ?? 'Оставить заявку'}
-          onClose={close}
-        >
-          <LeadForm
-            key={nonce}
-            source={req.source}
-            details={req.details}
-            idPrefix="modal"
-          />
-        </ModalShell>
-      )}
+      <AnimatePresence>
+        {req && (
+          <ModalShell
+            title={req.title ?? TITLES[req.source] ?? 'Оставить заявку'}
+            onClose={close}
+          >
+            <LeadForm
+              key={nonce}
+              source={req.source}
+              details={req.details}
+              idPrefix="modal"
+            />
+          </ModalShell>
+        )}
+      </AnimatePresence>
     </LeadModalContext.Provider>
   );
 }
@@ -95,17 +98,25 @@ function ModalShell({
   }, []);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[70] flex items-end justify-center bg-black/50 p-0 backdrop-blur-[4px] sm:items-center sm:p-4"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div
+      <motion.div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="lead-modal-title"
+        initial={{ opacity: 0, y: 56, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 32, scale: 0.98 }}
+        transition={{ type: 'spring', stiffness: 380, damping: 34 }}
         className="mb-[env(safe-area-inset-bottom)] max-h-[90dvh] w-full max-w-[500px] overflow-y-auto overscroll-contain rounded-t-2xl bg-background p-6 shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:mb-0 sm:rounded-2xl sm:p-8"
       >
         <div className="mb-5 flex items-start justify-between gap-4">
@@ -134,7 +145,7 @@ function ModalShell({
           </button>
         </div>
         {children}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLeadModal } from './LeadModal';
+import Reveal from './Reveal';
 
 interface Project {
   id: string;
@@ -52,6 +53,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" aria-labelledby="portfolio-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 py-14 sm:px-6 lg:py-20">
+        <Reveal>
         <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
           Наши работы
         </p>
@@ -64,9 +66,11 @@ export default function Portfolio() {
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           Реальные объекты с метражом, сроком и итоговой ценой из договора.
         </p>
+        </Reveal>
 
+        <Reveal delay={0.1} className="mt-8">
         {/* Интерактивное «до/после» */}
-        <figure className="mt-8 overflow-hidden rounded-3xl border border-border bg-card shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
+        <figure className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
           <div
             className="relative min-h-72 sm:min-h-96"
             role="img"
@@ -130,6 +134,7 @@ export default function Portfolio() {
             </button>
           </figcaption>
         </figure>
+        </Reveal>
 
         {/* Остальные объекты */}
         <ul className="mt-4 grid gap-4 md:grid-cols-2">

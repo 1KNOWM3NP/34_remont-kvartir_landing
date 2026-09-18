@@ -1,3 +1,5 @@
+import Reveal from './Reveal';
+
 const reviews = [
   {
     name: 'Анна и Дмитрий',
@@ -36,7 +38,7 @@ export default function SocialProof() {
   return (
     <section aria-labelledby="proof-heading" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 py-14 sm:px-6 lg:py-20">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <Reveal className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
               Нам доверяют
@@ -57,9 +59,10 @@ export default function SocialProof() {
               </span>
             </span>
           </p>
-        </div>
+        </Reveal>
 
-        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+        <Reveal delay={0.12} className="mt-8">
+        <ul className="grid gap-4 md:grid-cols-3">
           {reviews.map((r) => (
             <li
               key={r.name}
@@ -72,6 +75,7 @@ export default function SocialProof() {
             </li>
           ))}
         </ul>
+        </Reveal>
       </div>
     </section>
   );
