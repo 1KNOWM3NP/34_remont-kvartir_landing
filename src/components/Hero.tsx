@@ -61,7 +61,7 @@ export default function Hero() {
       aria-labelledby="hero-heading"
       className="overflow-x-clip"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-10 pb-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:pt-16 lg:pb-20">
+      <div className="mx-auto grid max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] items-center gap-10 px-4 pt-10 pb-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:pt-16 lg:pb-20">
         {/* Левая колонка: оффер */}
         <div>
           <p className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-4 py-1 font-display text-sm font-bold text-muted-foreground">
@@ -70,7 +70,7 @@ export default function Hero() {
 
           <h1
             id="hero-heading"
-            className="mt-5 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+            className="mt-5 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl 2xl:text-7xl"
           >
             Ремонт квартиры под ключ{' '}
             <span className="relative whitespace-nowrap text-accent-dark">
@@ -143,7 +143,7 @@ export default function Hero() {
         <div className="relative" aria-label="Пример сданного ремонта">
           <div
             aria-hidden="true"
-            className="relative min-h-80 overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-amber-100 via-orange-50 to-stone-300 shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:min-h-96"
+            className="relative min-h-80 overflow-hidden rounded-3xl border border-border shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:min-h-96 2xl:min-h-[34rem]"
             style={{
               backgroundImage:
                 'radial-gradient(rgba(120,113,108,0.18) 1.5px, transparent 1.5px)',

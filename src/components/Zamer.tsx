@@ -13,7 +13,7 @@ const points = [
 export default function Zamer() {
   return (
     <section id="zamer" aria-labelledby="zamer-heading" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-4 pt-2 pb-16 sm:px-6">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-16 sm:px-6">
         <div className="grid gap-6 overflow-hidden rounded-3xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-10 lg:grid-cols-2 lg:gap-10">
           <div>
             <p className="font-display text-sm font-bold tracking-wide text-accent uppercase">
@@ -21,7 +21,7 @@ export default function Zamer() {
             </p>
             <h2
               id="zamer-heading"
-              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
+              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl 2xl:text-5xl"
             >
               Узнайте точную цену за 60 минут
             </h2>

@@ -51,13 +51,13 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" aria-labelledby="portfolio-heading" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-20">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 py-14 sm:px-6 lg:py-20">
         <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
           Наши работы
         </p>
         <h2
           id="portfolio-heading"
-          className="mt-2 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
+          className="mt-2 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl 2xl:max-w-3xl 2xl:text-5xl"
         >
           Потяните ползунок: так меняется квартира
         </h2>

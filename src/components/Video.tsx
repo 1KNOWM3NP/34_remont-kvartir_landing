@@ -29,7 +29,7 @@ export default function Video() {
 
   return (
     <section aria-labelledby="video-heading" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
         <div className="grid items-center gap-8 rounded-3xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-10 lg:grid-cols-2">
           <div>
             <p className="font-display text-sm font-bold tracking-wide text-accent uppercase">
@@ -37,7 +37,7 @@ export default function Video() {
             </p>
             <h2
               id="video-heading"
-              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
+              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl 2xl:text-5xl"
             >
               2 минуты — и вы знаете о нас всё
             </h2>

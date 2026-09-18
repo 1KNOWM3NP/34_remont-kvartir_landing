@@ -35,7 +35,7 @@ export default function Faq() {
   const openLead = useLeadModal();
   return (
     <section aria-labelledby="faq-heading" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] px-4 pt-2 pb-14 sm:px-6 lg:pb-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="font-display text-sm font-bold tracking-wide text-accent-dark uppercase">
@@ -43,7 +43,7 @@ export default function Faq() {
             </p>
             <h2
               id="faq-heading"
-              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
+              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl 2xl:text-5xl"
             >
               Остались сомнения? Разбираем честно
             </h2>

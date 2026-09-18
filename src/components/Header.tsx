@@ -4,7 +4,7 @@ export default function Header() {
   const openLead = useLeadModal();
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex min-h-16 max-w-6xl xl:max-w-7xl 2xl:max-w-[88rem] items-center justify-between gap-3 px-4 sm:px-6">
         <a
           href="#top"
           className="flex min-h-11 items-center gap-2 font-display text-lg font-extrabold tracking-tight"
