@@ -1,3 +1,4 @@
+import Calculator from './components/Calculator';
 import Header from './components/Header';
 import Hero from './components/Hero';
 
@@ -13,24 +14,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-
-        {/* Заглушки якорей под задачи №2 (калькулятор) и №3 (модалка/замер).
-            CTA hero уже ведут сюда; наполнение — в своих задачах. */}
-        <section
-          id="calculator"
-          aria-label="Калькулятор стоимости (скоро)"
-          className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-6 sm:px-6"
-        >
-          <div className="rounded-2xl border border-dashed border-primary/50 bg-card px-6 py-8 text-center">
-            <h2 className="font-display text-xl font-extrabold">
-              Калькулятор стоимости
-            </h2>
-            <p className="mx-auto mt-2 max-w-md text-muted-foreground">
-              Появится в задаче №2: площадь, тип ремонта, комнаты и опции →
-              диапазон цены.
-            </p>
-          </div>
-        </section>
+        <Calculator />
 
         <section
           id="zamer"
