@@ -1,7 +1,10 @@
+import Benefits from './components/Benefits';
 import Calculator from './components/Calculator';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import { LeadModalProvider } from './components/LeadModal';
+import Pain from './components/Pain';
+import SocialProof from './components/SocialProof';
 import Zamer from './components/Zamer';
 
 export default function App() {
@@ -17,6 +20,9 @@ export default function App() {
         <Header />
         <main>
           <Hero />
+          <SocialProof />
+          <Pain />
+          <Benefits />
           <Calculator />
           <Zamer />
         </main>

@@ -18,6 +18,7 @@ const TITLES: Record<string, string> = {
   header: 'Заказать звонок',
   hero: 'Бесплатный замер',
   calculator: 'Точная смета после замера',
+  benefits: 'Зафиксировать цену',
   zamer: 'Бесплатный замер',
 };
 
