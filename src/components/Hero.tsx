@@ -101,14 +101,14 @@ export default function Hero() {
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#calculator"
-              className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
+              className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition duration-200 hover:-translate-y-px hover:bg-accent-dark"
             >
               Рассчитать стоимость
             </a>
             <button
               type="button"
               onClick={() => openLead({ source: 'hero' })}
-              className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl border-2 border-foreground/25 bg-card px-7 py-3 font-display text-base font-extrabold text-foreground transition-all duration-200 hover:border-foreground/60"
+              className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl border-2 border-foreground/25 bg-card px-7 py-3 font-display text-base font-extrabold text-foreground transition duration-200 hover:border-foreground/60"
             >
               Бесплатный замер
             </button>

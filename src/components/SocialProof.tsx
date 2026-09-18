@@ -63,7 +63,7 @@ export default function SocialProof() {
           {reviews.map((r) => (
             <li
               key={r.name}
-              className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_15px_rgba(0,0,0,0.1)]"
+              className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_15px_rgba(0,0,0,0.1)]"
             >
               <Stars />
               <p className="mt-3 flex-1 leading-relaxed">«{r.text}»</p>

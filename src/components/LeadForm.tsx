@@ -30,7 +30,14 @@ export default function LeadForm({ source, details, dark = false, idPrefix }: Le
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setTouched(true);
-    if (!isValidName(name) || !isCompletePhone(phone)) return;
+    if (!isValidName(name)) {
+      document.getElementById(`${idPrefix}-name`)?.focus();
+      return;
+    }
+    if (!isCompletePhone(phone)) {
+      document.getElementById(`${idPrefix}-phone`)?.focus();
+      return;
+    }
     setStatus('sending');
     try {
       const res = await submitLead({ name: name.trim(), phone, source, details });
@@ -138,7 +145,7 @@ export default function LeadForm({ source, details, dark = false, idPrefix }: Le
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="mt-5 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark disabled:cursor-wait disabled:opacity-70 disabled:hover:translate-y-0"
+        className="mt-5 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition duration-200 hover:-translate-y-px hover:bg-accent-dark disabled:cursor-wait disabled:opacity-70 disabled:hover:translate-y-0"
       >
         {status === 'sending' ? 'Отправляем…' : 'Перезвоните мне'}
       </button>

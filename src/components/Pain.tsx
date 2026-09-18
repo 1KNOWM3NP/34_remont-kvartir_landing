@@ -70,7 +70,7 @@ export default function Pain() {
             <strong className="font-display">исключена договором</strong>, а не обещаниями.{' '}
             <a
               href="#benefits"
-              className="font-display font-extrabold text-accent-dark underline decoration-accent decoration-2 underline-offset-4"
+              className="font-display font-extrabold text-accent-dark underline decoration-accent decoration-2 underline-offset-4 transition hover:text-accent"
             >
               Смотрите, как именно
             </a>

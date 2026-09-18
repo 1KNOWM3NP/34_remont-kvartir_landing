@@ -86,8 +86,10 @@ function ModalShell({
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Фокус в модалку при открытии (a11y).
+  // Фокус в модалку при открытии (a11y). Только для точных указателей —
+  // на тачскринах не дёргаем клавиатуру без нужды.
   useEffect(() => {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
     const input = panelRef.current?.querySelector('input');
     (input as HTMLInputElement | undefined)?.focus();
   }, []);
@@ -104,7 +106,7 @@ function ModalShell({
         role="dialog"
         aria-modal="true"
         aria-labelledby="lead-modal-title"
-        className="w-full max-w-[500px] rounded-t-2xl bg-background p-6 shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:rounded-2xl sm:p-8"
+        className="mb-[env(safe-area-inset-bottom)] max-h-[90dvh] w-full max-w-[500px] overflow-y-auto overscroll-contain rounded-t-2xl bg-background p-6 shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:mb-0 sm:rounded-2xl sm:p-8"
       >
         <div className="mb-5 flex items-start justify-between gap-4">
           <div>

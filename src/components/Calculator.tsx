@@ -134,7 +134,7 @@ export default function Calculator() {
                       type="button"
                       onClick={() => setType(key)}
                       aria-pressed={active}
-                      className={`min-h-11 cursor-pointer rounded-xl border-2 px-3 py-3 text-left transition-all duration-200 ${
+                      className={`min-h-11 cursor-pointer rounded-xl border-2 px-3 py-3 text-left transition duration-200 ${
                         active
                           ? 'border-accent bg-amber-50 shadow-[0_4px_6px_rgba(0,0,0,0.1)]'
                           : 'border-border bg-card hover:border-primary/60'
@@ -160,7 +160,7 @@ export default function Calculator() {
               <legend className="font-display text-base font-extrabold">
                 Комнат
               </legend>
-              <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Количество комнат">
+              <div className="mt-3 flex flex-wrap gap-2">
                 {ROOMS.map((r) => {
                   const active = rooms === r;
                   return (
@@ -169,7 +169,7 @@ export default function Calculator() {
                       type="button"
                       onClick={() => setRooms(r)}
                       aria-pressed={active}
-                      className={`flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-xl border-2 px-4 py-2 font-display text-sm font-extrabold transition-all duration-200 ${
+                      className={`flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-xl border-2 px-4 py-2 font-display text-sm font-extrabold transition duration-200 ${
                         active
                           ? 'border-foreground bg-foreground text-white'
                           : 'border-border bg-card hover:border-primary/60'
@@ -197,7 +197,7 @@ export default function Calculator() {
                       role="checkbox"
                       aria-checked={checked}
                       onClick={() => toggle(o.id)}
-                      className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition-all duration-200 ${
+                      className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition duration-200 ${
                         checked
                           ? 'border-accent bg-amber-50'
                           : 'border-border bg-card hover:border-primary/60'
@@ -273,7 +273,7 @@ export default function Calculator() {
                   details: `${summary}: ${formatRoubles(min)} – ${formatRoubles(max)}`,
                 })
               }
-              className="mt-6 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 text-center font-display text-base font-extrabold text-on-accent transition-all duration-200 hover:-translate-y-px hover:bg-amber-500"
+              className="mt-6 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 text-center font-display text-base font-extrabold text-on-accent transition duration-200 hover:-translate-y-px hover:bg-amber-500"
             >
               Получить точную смету
             </button>

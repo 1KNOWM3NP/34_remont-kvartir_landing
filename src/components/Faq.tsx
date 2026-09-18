@@ -53,7 +53,7 @@ export default function Faq() {
             <button
               type="button"
               onClick={() => openLead({ source: 'faq', title: 'Задать свой вопрос' })}
-              className="mt-6 flex min-h-12 cursor-pointer items-center justify-center rounded-xl border-2 border-foreground/25 bg-card px-7 py-3 font-display text-base font-extrabold text-foreground transition-all duration-200 hover:border-foreground/60 sm:inline-flex"
+              className="mt-6 flex min-h-12 cursor-pointer items-center justify-center rounded-xl border-2 border-foreground/25 bg-card px-7 py-3 font-display text-base font-extrabold text-foreground transition duration-200 hover:border-foreground/60 sm:inline-flex"
             >
               Задать свой вопрос
             </button>
@@ -65,7 +65,7 @@ export default function Faq() {
                 key={f.q}
                 className="group rounded-2xl border border-border bg-card px-5 py-1 shadow-[0_4px_6px_rgba(0,0,0,0.1)]"
               >
-                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-base font-extrabold [&::-webkit-details-marker]:hidden">
+                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-base font-extrabold transition hover:text-accent-dark [&::-webkit-details-marker]:hidden">
                   {f.q}
                   <span
                     aria-hidden="true"

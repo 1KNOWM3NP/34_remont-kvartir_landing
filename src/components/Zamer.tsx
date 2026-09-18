@@ -50,7 +50,7 @@ export default function Zamer() {
               Или позвоните сами:{' '}
               <a
                 href="tel:+74951204567"
-                className="font-display font-extrabold whitespace-nowrap text-white underline decoration-accent decoration-2 underline-offset-4"
+                className="font-display font-extrabold whitespace-nowrap text-white underline decoration-accent decoration-2 underline-offset-4 transition hover:decoration-4"
               >
                 +7 495 120-45-67
               </a>

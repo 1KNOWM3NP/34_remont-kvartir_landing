@@ -46,7 +46,7 @@ export default function Steps() {
           {steps.map((s) => (
             <li
               key={s.n}
-              className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_15px_rgba(0,0,0,0.1)]"
+              className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_15px_rgba(0,0,0,0.1)]"
             >
               <span
                 aria-hidden="true"
@@ -64,7 +64,7 @@ export default function Steps() {
           <button
             type="button"
             onClick={() => openLead({ source: 'steps', title: 'Начать с бесплатного замера' })}
-            className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-foreground px-7 py-3 font-display text-base font-extrabold text-white transition-all duration-200 hover:-translate-y-px hover:bg-primary"
+            className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-foreground px-7 py-3 font-display text-base font-extrabold text-white transition duration-200 hover:-translate-y-px hover:bg-primary"
           >
             Начать с бесплатного замера
           </button>
