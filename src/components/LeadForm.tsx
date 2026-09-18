@@ -55,7 +55,7 @@ export default function LeadForm({ source, details, dark = false, idPrefix }: Le
           </svg>
         </span>
         <p className="mt-4 font-display text-xl font-extrabold">Заявка принята!</p>
-        <p className={`mt-2 ${dark ? 'text-white/80' : 'text-muted-foreground'}`}>
+        <p className={`mt-2 break-words ${dark ? 'text-white/80' : 'text-muted-foreground'}`}>
           {name.trim()}, перезвоним в течение 15 минут и договоримся о замере.
         </p>
       </div>
@@ -70,7 +70,7 @@ export default function LeadForm({ source, details, dark = false, idPrefix }: Le
     <form onSubmit={onSubmit} noValidate aria-label="Форма заявки на замер">
       {details && (
         <p
-          className={`mb-4 rounded-xl px-4 py-3 text-sm ${
+          className={`mb-4 rounded-xl px-4 py-3 text-sm break-words ${
             dark ? 'bg-white/10 text-white/90' : 'bg-muted text-muted-foreground'
           }`}
         >
@@ -88,7 +88,7 @@ export default function LeadForm({ source, details, dark = false, idPrefix }: Le
           type="text"
           name="name"
           autoComplete="name"
-          placeholder="Например, Анна"
+          placeholder="Например, Анна…"
           value={name}
           onChange={(e) => setName(e.target.value)}
           aria-invalid={nameError ? true : undefined}
@@ -140,7 +140,7 @@ export default function LeadForm({ source, details, dark = false, idPrefix }: Le
         disabled={status === 'sending'}
         className="mt-5 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark disabled:cursor-wait disabled:opacity-70 disabled:hover:translate-y-0"
       >
-        {status === 'sending' ? 'Отправляем…' : 'Жду звонка'}
+        {status === 'sending' ? 'Отправляем…' : 'Перезвоните мне'}
       </button>
       <p className={`mt-3 text-center text-xs ${dark ? 'text-white/60' : 'text-muted-foreground'}`}>
         Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных

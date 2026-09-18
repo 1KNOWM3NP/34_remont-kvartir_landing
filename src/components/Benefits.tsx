@@ -126,10 +126,10 @@ export default function Benefits() {
             onClick={() => openLead({ source: 'benefits' })}
             className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
           >
-            Зафиксировать цену замера — бесплатно
+            Зафиксировать цену ремонта
           </button>
           <p className="text-sm text-muted-foreground">
-            Ответим за 15 минут, замер — в удобные 60 минут.
+            Ответим за 15 минут, приедем в удобное время — замер займёт 60 минут.
           </p>
         </div>
       </div>

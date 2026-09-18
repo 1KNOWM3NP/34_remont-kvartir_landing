@@ -127,7 +127,7 @@ export default function Hero() {
                 <span className="shrink-0 text-accent-dark">{s.icon}</span>
                 <div>
                   <dt className="sr-only">{s.label}</dt>
-                  <dd className="font-display text-lg leading-none font-extrabold">
+                  <dd className="font-display text-lg leading-none font-extrabold tabular-nums">
                     {s.value}
                   </dd>
                   <dd className="mt-1 text-xs leading-tight text-muted-foreground">
@@ -155,7 +155,7 @@ export default function Hero() {
               className="absolute inset-x-8 top-10 rounded-2xl bg-card/90 p-5 shadow-[0_10px_15px_rgba(0,0,0,0.1)] backdrop-blur"
             >
               <p className="font-display text-sm font-bold text-muted-foreground">
-                Двухкомнатная · 68 м² · капитальный
+                Двухкомнатная · 68&nbsp;м² · капитальный
               </p>
               <p className="mt-1 font-display text-2xl font-extrabold">
                 Сдана за 42 дня
@@ -168,7 +168,7 @@ export default function Hero() {
               </div>
               <div className="mt-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm font-semibold">
                 <span className="text-muted-foreground">Смета</span>
-                <span>1 240 000 ₽ = итоговая цена</span>
+                <span>1&nbsp;240&nbsp;000&nbsp;₽ = итоговая цена</span>
               </div>
             </div>
 

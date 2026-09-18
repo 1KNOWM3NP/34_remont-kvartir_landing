@@ -64,7 +64,7 @@ export default function Calculator() {
   const toggle = (id: OptionId) =>
     setOpts((prev) => (prev.includes(id) ? prev.filter((o) => o !== id) : [...prev, id]));
 
-  const summary = `${rooms === 'Студия' ? 'Студия' : rooms + '-комн.'} · ${area} м² · ${RATES[type].short}`;
+  const summary = `${rooms === 'Студия' ? 'Студия' : rooms + '-комн.'} · ${area} м² · ${RATES[type].short}`;
 
   return (
     <section id="calculator" aria-labelledby="calc-heading" className="scroll-mt-20">
@@ -241,7 +241,7 @@ export default function Calculator() {
           <div className="flex flex-col rounded-2xl bg-foreground p-6 text-white shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:p-8 lg:sticky lg:top-24 lg:self-start">
             <p className="text-sm text-white/70">{summary}</p>
             <p
-              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
+              className="mt-2 font-display text-3xl font-extrabold tracking-tight text-balance tabular-nums sm:text-4xl"
               aria-live="polite"
             >
               {formatRoubles(min)} – {formatRoubles(max)}

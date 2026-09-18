@@ -63,10 +63,10 @@ export default function Steps() {
         <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <button
             type="button"
-            onClick={() => openLead({ source: 'steps', title: 'Начать с шага 1 — заявка' })}
+            onClick={() => openLead({ source: 'steps', title: 'Начать с бесплатного замера' })}
             className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-foreground px-7 py-3 font-display text-base font-extrabold text-white transition-all duration-200 hover:-translate-y-px hover:bg-primary"
           >
-            Начать с шага 1 — это бесплатно
+            Начать с бесплатного замера
           </button>
           <p className="text-sm text-muted-foreground">
             Сегодня замер — завтра уже смета с фиксированной ценой.

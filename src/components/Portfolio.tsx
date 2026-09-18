@@ -15,24 +15,24 @@ const projects: Project[] = [
   {
     id: 'p1',
     name: 'Двухкомнатная на Ленинском',
-    meta: '68 м² · капитальный · 42 дня',
-    price: '1 240 000 ₽',
+    meta: '68 м² · капитальный · 42 дня',
+    price: '1 240 000 ₽',
     before: 'linear-gradient(135deg, #78716c 0%, #57534e 45%, #44403c 100%)',
     after: 'linear-gradient(135deg, #fde68a 0%, #fdba74 40%, #d97706 100%)',
   },
   {
     id: 'p2',
     name: 'Однушка у парка',
-    meta: '38 м² · косметический · 19 дней',
-    price: '410 000 ₽',
+    meta: '38 м² · косметический · 19 дней',
+    price: '410 000 ₽',
     before: 'linear-gradient(135deg, #64748b 0%, #475569 50%, #334155 100%)',
     after: 'linear-gradient(135deg, #fef3c7 0%, #fed7aa 45%, #fb923c 100%)',
   },
   {
     id: 'p3',
     name: 'Трёшка для семьи с детьми',
-    meta: '82 м² · евро · 58 дней',
-    price: '2 150 000 ₽',
+    meta: '82 м² · евро · 58 дней',
+    price: '2 150 000 ₽',
     before: 'linear-gradient(135deg, #737373 0%, #525252 50%, #404040 100%)',
     after: 'linear-gradient(135deg, #ffedd5 0%, #fdba74 40%, #b45309 100%)',
   },
@@ -120,13 +120,13 @@ export default function Portfolio() {
               onClick={() =>
                 openLead({
                   source: 'portfolio',
-                  title: 'Хочу такой же ремонт',
+                  title: 'Получить такой ремонт',
                   details: `${featured.name}: ${featured.meta}, итог ${featured.price}`,
                 })
               }
               className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 font-display text-base font-extrabold whitespace-nowrap text-on-accent shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
             >
-              Хочу так же
+              Получить такой ремонт
             </button>
           </figcaption>
         </figure>
