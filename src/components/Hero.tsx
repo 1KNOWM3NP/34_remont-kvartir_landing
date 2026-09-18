@@ -1,3 +1,5 @@
+import { useLeadModal } from './LeadModal';
+
 const stats = [
   {
     value: '340+',
@@ -52,6 +54,7 @@ const stats = [
 ];
 
 export default function Hero() {
+  const openLead = useLeadModal();
   return (
     <section
       id="top"
@@ -102,12 +105,13 @@ export default function Hero() {
             >
               Рассчитать стоимость
             </a>
-            <a
-              href="#zamer"
+            <button
+              type="button"
+              onClick={() => openLead({ source: 'hero' })}
               className="flex min-h-12 cursor-pointer items-center justify-center rounded-xl border-2 border-foreground/25 bg-card px-7 py-3 font-display text-base font-extrabold text-foreground transition-all duration-200 hover:border-foreground/60"
             >
               Бесплатный замер
-            </a>
+            </button>
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">

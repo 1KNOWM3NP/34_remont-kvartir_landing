@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useLeadModal } from './LeadModal';
 
 type RepairType = 'cosmetic' | 'capital' | 'euro';
 
@@ -52,6 +53,7 @@ export function calcRange(
 }
 
 export default function Calculator() {
+  const openLead = useLeadModal();
   const [area, setArea] = useState(68);
   const [type, setType] = useState<RepairType>('capital');
   const [rooms, setRooms] = useState<string>('2');
@@ -263,12 +265,18 @@ export default function Calculator() {
               </p>
             </div>
 
-            <a
-              href="#zamer"
-              className="mt-6 flex min-h-12 cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 text-center font-display text-base font-extrabold text-on-accent transition-all duration-200 hover:-translate-y-px hover:bg-amber-500"
+            <button
+              type="button"
+              onClick={() =>
+                openLead({
+                  source: 'calculator',
+                  details: `${summary}: ${formatRoubles(min)} – ${formatRoubles(max)}`,
+                })
+              }
+              className="mt-6 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-accent px-7 py-3 text-center font-display text-base font-extrabold text-on-accent transition-all duration-200 hover:-translate-y-px hover:bg-amber-500"
             >
               Получить точную смету
-            </a>
+            </button>
             <p className="mt-3 text-center text-sm text-white/70">
               Замер — 60 минут, смета — за 24 часа. Бесплатно, без предоплаты
               за работы.

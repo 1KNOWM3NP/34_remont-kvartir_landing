@@ -1,4 +1,7 @@
+import { useLeadModal } from './LeadModal';
+
 export default function Header() {
+  const openLead = useLeadModal();
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
@@ -32,12 +35,13 @@ export default function Header() {
           >
             +7&nbsp;495&nbsp;120-45-67
           </a>
-          <a
-            href="#zamer"
+          <button
+            type="button"
+            onClick={() => openLead({ source: 'header' })}
             className="flex min-h-11 cursor-pointer items-center rounded-lg bg-foreground px-4 py-2 font-display text-sm font-bold text-white transition-colors duration-200 hover:bg-primary"
           >
             Заказать звонок
-          </a>
+          </button>
         </div>
       </div>
     </header>
