@@ -80,16 +80,16 @@ export default function Video() {
                 type="button"
                 onClick={play}
                 aria-label="Смотреть видео о компании — оставите телефон, пришлём ссылку"
-                className="group relative block aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-amber-200 via-orange-100 to-stone-400 text-left"
+                className="group relative block aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-stone-800 text-left"
               >
-                <span
+                <img
+                  src="/photos/video-poster.jpg"
+                  alt=""
+                  width={1672}
+                  height={941}
+                  loading="lazy"
                   aria-hidden="true"
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(rgba(120,113,108,0.25) 1.5px, transparent 1.5px)',
-                    backgroundSize: '20px 20px',
-                  }}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
                 />
                 <span className="absolute inset-0 flex items-center justify-center">
                   <span className="flex h-20 w-20 items-center justify-center rounded-full bg-accent text-on-accent shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-transform duration-200 group-hover:scale-105">

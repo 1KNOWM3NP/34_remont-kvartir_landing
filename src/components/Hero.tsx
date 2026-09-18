@@ -161,13 +161,16 @@ export default function Hero() {
         <div className="relative" aria-label="Пример сданного ремонта">
           <div
             aria-hidden="true"
-            className="relative min-h-80 overflow-hidden rounded-3xl border border-border shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:min-h-96 2xl:min-h-[34rem]"
-            style={{
-              backgroundImage:
-                'radial-gradient(rgba(120,113,108,0.18) 1.5px, transparent 1.5px)',
-              backgroundSize: '22px 22px',
-            }}
+            className="relative min-h-80 overflow-hidden rounded-3xl border border-border bg-stone-200 shadow-[0_20px_25px_rgba(0,0,0,0.15)] sm:min-h-96 2xl:min-h-[34rem]"
           >
+            <img
+              src="/photos/hero.jpg"
+              alt=""
+              width={1536}
+              height={1024}
+              fetchPriority="high"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div
               aria-hidden="true"
               className="absolute inset-x-8 top-10 rounded-2xl bg-card/90 p-5 shadow-[0_10px_15px_rgba(0,0,0,0.1)] backdrop-blur"
